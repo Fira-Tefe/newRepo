@@ -1,0 +1,50 @@
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $target_dir = "uploads/";
+
+    // Check if the directory exists; if not, create it
+    if (!file_exists($target_dir)) {
+        mkdir($target_dir, 0777, true);
+    }
+
+    $default_image = 'uploads/profile.jpg'; // Default image path
+    $target_file = $target_dir . basename($_FILES["profile-image"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+    // Check if the uploaded file is an image
+    $check = getimagesize($_FILES["profile-image"]["tmp_name"]);
+    if ($check !== false) {
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+
+    // Check file size (limit to 5MB)
+    if ($_FILES["profile-image"]["size"] > 5000000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+
+    // Allow certain file formats
+    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+        echo "Sorry, only JPG, JPEG, and PNG files are allowed.";
+        $uploadOk = 0;
+    }
+
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    } else {
+        if (move_uploaded_file($_FILES["profile-image"]["tmp_name"], $target_file)) {
+            $_SESSION['profile_image'] = $target_file; // Store image path in session
+            header('Location: ./recordofficeAdmin.php');
+            exit();
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+}
+?>

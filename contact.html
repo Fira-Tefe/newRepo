@@ -1,0 +1,159 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Record Management System</title>
+  </head>
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="./switcher.css" />
+  <link rel="stylesheet" href="./color-1.css" />
+  <link rel="stylesheet" href="./contact.css" />
+    <link rel="stylesheet" href="./color-1.css" />
+  <link rel="stylesheet" href="./contactUsResponsive.css" />
+  <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="./color-1.css"
+    class="alternate-style"
+    title="color-1"
+    disabled
+  />
+  <link
+    rel="stylesheet"
+    href="./color-2.css"
+    class="alternate-style"
+    title="color-2"
+    disabled
+  />
+  <link
+    rel="stylesheet"
+    href="./color-3.css"
+    class="alternate-style"
+    title="color-3"
+    disabled
+  />
+  <link
+    rel="stylesheet"
+    href="./color-4.css"
+    class="alternate-style"
+    title="color-4"
+    disabled
+  />
+  <link
+    rel="stylesheet"
+    href="./color-5.css"
+    class="alternate-style"
+    title="color-5"
+    disabled
+  />
+
+  <body>
+    <!-- header start -->
+    <header class="header">
+      <div class="logo">
+        <img
+          src="./logo/Ministry_of_Innovation_and_Technology_Ethiopia_removebg_preview.png"
+          alt=""
+          width="60px"
+        />
+      </div>
+      <div class="bx bx-menu bx-tada" id="menu-icon"></div>
+      <nav class="nav">
+        <a href="./index.php"><i class="bx bxs-home bx-tada"></i>Back to Home</a>
+      </nav>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="heading">
+            <h2>Get in Touch</h2>
+            <p>Feel Free To Contact Us</p>
+        </div>
+        <div class="form-box">
+          <form action="">
+             <div class="names">
+                <div class="fname">
+                   <label for="fname"><h3>First Name</h3></label><br>
+                   <input type="text" id="fname" name="fname" required>
+                </div>
+                <div class="lname">
+                  <label for="lname"><h3>Last Name</h3></label><br>
+                   <input type="text" id="lname" name="lname" required>
+                </div>
+             </div>
+             <div class="aditions">
+                <div class="email">
+                  <label for="email"><h3>Email</h3></label><br>
+                  <input type="text" id="email" name="email" required>
+                </div>
+                <div class="phone">
+                  <label for="phone"><h3>Phone Number</h3></label><br>
+                  <input type="number" id="phone" name="phone" required>
+                </div>
+             </div>
+             <div class="text-area">
+               <label for="text"><h3>What Do You Have In Mind</h3></label><br>
+               <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+             </div>
+            <div class="btn">
+                  <button type="reset">Reset</button>
+                  <button type="submit">Submit</button>
+            </div>
+            </form>
+        </div>
+        <div class="social-media">
+            <a href=""><i class='bx bxl-facebook'></i></a>
+            <a href=""><i class='bx bxl-google'></i></a>
+            <a href=""><i class='bx bxl-twitter'></i></a>
+            <a href=""><i class='bx bxl-instagram-alt'></i></a>
+        </div>
+      </div>
+    </section>
+    <footer class="contact-footer">
+        <div class="heading">
+          <p>Copyright &copy; 2024 HU-Students | All Rights Reserved.</p>
+        </div>
+        <div class="icon">
+          <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+            <div class="style-switch">
+              <div class="style-switch-toggler s-icon">
+                <i class="bx bx-cog"></i>
+              </div>
+              <div class="day-night s-icon">
+                <i class="bx"></i>
+              </div>
+              <h4>Theme Colors</h4>
+              <div class="colors">
+                <span
+                  class="color-1"
+                  onclick="setActiveStyle('color-1')"
+                ></span>
+                <span
+                  class="color-2"
+                  onclick="setActiveStyle('color-2')"
+                ></span>
+                <span
+                  class="color-3"
+                  onclick="setActiveStyle('color-3')"
+                ></span>
+                <span
+                  class="color-4"
+                  onclick="setActiveStyle('color-4')"
+                ></span>
+                <span
+                  class="color-5"
+                  onclick="setActiveStyle('color-5')"
+                ></span>
+              </div>
+            </div>
+    <script src="./switcher.js"></script>
+    <script src="./menuIcon.js"></script>
+  </body>
+</html>

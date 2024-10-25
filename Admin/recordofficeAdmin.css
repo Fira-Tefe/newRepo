@@ -1,0 +1,627 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900$display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Poppins',sans-serif;
+}
+.hidden{
+    display: none;
+}
+
+.headAdmin{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 45px;
+    z-index: 999;
+    background: var(--bg-black-900);
+    border-bottom: 1px solid var(--skin-color);
+}
+.headAdmin .logo{
+   width: 50px;
+   position: absolute;
+   left: 0;
+   height: 100%;
+   margin-left: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.headAdmin .logo img{
+    width: 100%;
+}
+.headAdmin .box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+  margin-right: 50px;
+  width: 35%;
+  z-index: 9999;
+}
+.headAdmin .box a{
+    position: relative;
+}
+.headAdmin .box h3{
+    color: var(--text-black-700);
+    font-size: 16px;
+    font-weight: 700;
+    position: relative;
+}
+.headAdmin .box h3::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -3px;
+    background-color: #e21d1d;
+    transition: 0.5s;
+}
+.headAdmin .box h3.activenav::after{
+   width: 50%;
+
+}
+.headAdmin .box h3:hover{
+    color: var(--main-color2);
+    transform: scale(1.05);
+}
+.headAdmin .box h3 i{
+    font-size: 17px;
+    text-align: center;
+    margin-right: 2px;
+    font-weight: 800;
+}
+.headAdmin .box a span{
+    width: 17px;
+    height: 17px;
+    top: -5px;
+    right: -10px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(231, 24, 24);
+    color: white;
+    border: 1px solid var(--skin-color);
+    font-size: 12px;
+    font-weight: 800;
+}
+section{
+    padding-top: 50px;
+    min-height: 100vh;
+}
+/* section profile */
+.profile .hero{
+    height: 100%;
+    display: flex;
+    margin: 3% 35%;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--skin-color);
+}
+.profile .hero .card{
+    width: 400px;
+    background: var(--bg-black-900);
+    padding: 40px;
+    text-align: center;
+    color: var(--text-black-700);
+    font-weight: 700;
+}
+.profile .hero .card h1{
+    font-weight: 500;
+    color: var(--text-black-900);
+    font-weight: 700;
+
+}
+.profile .hero .card img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.profile .hero .card label{
+    display: block;
+    width: 200px;
+    background: #e3362c;
+    color: var(--text-black-900);
+    font-size: 17px;
+    font-weight: 800;
+    padding: 12px;
+    margin: 10px auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.profile .hero .card label:hover{
+    transform: scale(1.05);
+    color: var(--main-color2);
+}
+.profile .hero .card button{
+    border: 1px solid var(--skin-color);
+    color: var(--text-black-700);
+    font-weight: 600;
+    padding: 2px 5px;
+    border-radius: 5px;
+    background: var(--bg-black-50);
+}
+.profile .hero .card button:hover{
+    color: var(--main-color2);
+    transform: scale(1.05);
+}
+.profile .hero .card input{
+    display: none;
+}
+/* profile section end */
+.signup .formBox{
+   border: 1px solid var(--skin-color);
+   margin: 5% 20%;
+   border-radius: 10px;
+   display: flex;
+   flex-direction: column;
+}
+.signup .formBox h2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-black-900);
+    font-weight: 800;
+    margin: 20px 0;
+}
+.signup .formBox .nameDiv,
+.signup .formBox .usernameDiv,
+.signup .formBox .passwordDiv,
+.signup .formBox .confirmDiv,
+.signup .formBox .butnDiv{
+    display: flex;
+    align-items: center;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 0 5%;
+    margin-bottom: 25px;
+}
+.signup .formBox .nameDiv label,
+.signup .formBox .usernameDiv label,
+.signup .formBox .passwordDiv label,
+.signup .formBox .confirmDiv label{
+    flex: 0 0 35%;
+    max-width: 35%;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 20px;
+    color: var(--text-black-900);
+}
+.signup .formBox .nameDiv input,
+.signup .formBox .usernameDiv input,
+.signup .formBox .passwordDiv input,
+.signup .formBox .confirmDiv input{
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 27px;
+    border-radius: 10px;
+    border: 1px solid var(--skin-color);
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-black-700);
+}
+.signup .formBox .butnDiv{
+    justify-content: center;
+    gap: 5%;
+}
+.signup .formBox .butnDiv button{
+    width: 25%;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    border: 1px solid var(--skin-color);
+}
+.signup .formBox .butnDiv button:hover{
+    transform: scale(1.05);
+    color: var(--main-color2);
+}
+
+/* style for Messsages */
+.messages .savechanges{
+    display: flex;
+    justify-content: end;
+    padding-right: 13%;
+    margin-bottom: 20px;
+}
+.messages .newBoundary{
+    margin-left: 5%;
+}
+.messages .savechanges span{
+    border: 1px solid var(--skin-color);
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    margin-left: -10px;
+    margin-top: -13px;
+    font-size: 15px;
+    color: white;
+    font-weight: 800;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.messages .messagesBanker{
+    margin-top: 50px;
+    margin-bottom: 40px;
+    margin-left: 70px;
+}
+.messages .messagesBanker h1{
+    color: var(--text-black-900);
+    font-size: 23px;
+    cursor: pointer;
+    font-weight: 800;
+    width: 300px;
+    position: relative;
+}
+.messages .messagesBanker h1::after{
+   content: '';
+   background: red;
+   bottom: -5px;
+   left: 0;
+   width: 40%;
+   height: 3px;
+   position: absolute;
+}
+.messages .messagesBanker h1::before{
+    content: '';
+    background: red;
+    bottom: -13px;
+    left: 0;
+    width: 15%;
+    height: 3px;
+    position: absolute;
+ }
+.messages .savechanges.stored{
+    justify-content: start;
+    margin-left: 50px;
+}
+.messages .savechanges a{
+    border: 1px solid var(--skin-color);
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 10px;
+    color: var(--text-black-900);
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.messages .savechanges a:hover{
+    transform: scale(1.05);
+    color: var(--main-color2);
+}
+.messages .tableBox{
+    margin: 3% 10%;
+    display: flex;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.messages .tableBox th{
+    width: 25%;
+}
+.messages .tableBox table,th{
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+table,th, td,tr{
+    border: 1px solid var(--skin-color);
+}
+.messages .tableBox td img{
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.messages .tableBox .heading{
+    height: 40px;
+    background: var(--bg-black-900);;
+}
+.messages .tableBox .heading h3{
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    color: var(--text-black-900);
+    font-weight: 700;
+}
+.messages .tableBox .lists .nlists{
+    padding-top: 2px;
+    text-align: center;
+}
+.messages .tableBox td{
+    color: var(--text-black-700);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 5px;
+}
+.messages .tableBox td h4{
+    border: 1px solid var(--skin-color);
+    border-radius: 5px;
+    margin: 0 30%;
+    display: flex;
+    width: 50px;
+    height: 23px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #29ffff;
+}
+.messages .tableBox td h5{
+    border: 1px solid var(--skin-color);
+    border-radius: 10px;
+    margin: 0 5%;
+    display: flex;
+    width: 80%;
+    height: 23px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: var(--bg-black-0);
+}
+.messages .tableBox td img{
+    width: 100%;
+    border-radius: 10px;
+    padding: 0 5%;
+}
+.messages .tableBox td h4:hover{
+    transform: scale(1.05);
+    color: var(--main-color2);
+}
+.messages .boundary{
+    margin-top: 2%;
+    margin-left: 5%;
+}
+.sections{
+    display: none;
+}
+.sections.activesec{
+    display: block;
+}
+.setting .headingSet{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 5%;
+    font-size: 15px;
+    color: var(--text-black-700);
+    font-weight: 600;
+}
+.setting .headingSet h4{
+    font-size: 18px;
+    color: var(--text-black-700);
+    font-weight: 700;
+    position: relative;
+    cursor: pointer;
+}
+.setting .headingSet h4::after{
+    background: red;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+.setting .headingSet h4.active::after{
+    width: 50%;
+}
+.setting .headingSet h4 span{
+    border: 1px solid var(--skin-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    top: -10px;
+    right: -13px;
+    position: absolute;
+    font-size: 13px;
+    font-weight: 800;
+    color: #fff;
+    background: red;
+}
+.setting .setLists h3{
+    color: var(--text-black-900);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 15px 10%;
+}
+.setting .setLists.selectAll h3{
+   margin-left: 5%;
+}
+.setting .setLists{
+    border: 1px solid var(--skin-color);
+    margin: 30px 10%;
+    position: relative;
+    transition: 0.5s;
+}
+.setting .setLists::after{
+    background: var(--skin-color);
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    bottom: -20px;
+}
+.setting .setLists::before{
+    background: var(--skin-color);
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    bottom: -40px;
+}
+.setting .rename .previousFullname,
+.setting .rename .previousPassword,
+.setting .rename .newFullname,
+.setting .rename .setUser,
+.setting .rename .setPassword,
+.setting .delete .deleteName,
+.setting .delete .deletePassword,
+.setting .rename .seCpassword{
+    display: flex;
+    flex: 0 0 100%;
+    max-width: 100%;
+    align-items: center;
+    align-items: center;
+    margin-top: 15px;
+}
+.setting .rename label,
+.setting .delete label{
+    color: var(--text-black-900);
+    font-size: 15px;
+    font-weight: 600;
+    flex: 0 0 30%;
+    max-width: 30%;
+    padding-left: 10%;
+    display: flex;
+    align-items: center;
+}
+.setting .rename input,
+.setting .delete input{
+    border: 1px solid var(--skin-color);
+    border-radius: 10px;
+    flex: 0 0 40%;
+    max-width: 40%;
+    height: 30px;
+    padding: 5px;
+    color: var(--text-black-700);
+    font-size: 14px;
+    font-weight: 600;
+    background: var(--bg-black-900);
+}
+.setting .rename .setButton,
+.setting .delete .deleteBtn{
+    margin: 15px 10%;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding-left: 20%;
+}
+.setting .rename .setButton button,
+.setting .delete .deleteBtn button{
+    width: 20%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--skin-color);
+    font-size: 14px;
+    color: var(--text-black-900);
+    font-weight: 700;
+    cursor: pointer;
+    background: var(--bg-black-0);
+}
+.setting .rename .setButton button:hover,
+.setting .delete .deleteBtn button:hover{
+    transform: scale(1.05);
+    color: var(--main-color2);
+}
+.setting .selectAll .selectTable{
+    margin: 20px 5%;
+    width: 90%;
+    border: none;
+}
+.setting .selectAll th{
+    border: 1px solid var(--skin-color);
+    border-collapse: collapse;
+    height: 40px;
+    background: var(--bg-black-900);
+}
+.setting .selectAll tr{
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 40px;
+    border: hidden;
+}
+.setting .selectAll .selectTable .Cnumber,
+.setting .selectAll .Sno{
+    color: var(--text-black-700);
+    font-size: 15px;
+    font-weight: 600;
+    flex: 0 0 10%;
+    max-width: 10%;
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+}
+.setting .selectAll .Cfullname,
+.setting .selectAll .Cusername,
+.setting .selectAll .Snm,
+.setting .selectAll .Sun{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: var(--text-black-700);
+    font-size: 15px;
+    font-weight: 600;
+    flex: 0 0 45%;
+    max-width: 45%;
+    padding-left: 3%;
+}
+.setting .setLists{
+    display: none;
+}
+.setting .setLists.activeSet{
+    display: block;
+}
+/* footer css */
+/* restore button on record office message pages */
+
+.messages .tableBox td h4.on-status {
+    color: var(--text-black-900);
+    background-color: green; 
+    cursor: pointer;
+    font-weight: 600;
+    padding: 5px; 
+    border-radius: 4px;
+}
+
+.messages .tableBox td h4.off-status {
+    color: var(--text-black-900);
+    background-color: red; 
+    cursor: pointer;
+    font-weight: 600;
+    padding: 5px; 
+    border-radius: 4px; 
+}
+.messages .search{
+    margin: 0 10%;
+}
+.messages .search input{
+    border: 1px solid var(--skin-color);
+    padding: 5px;
+    color: var(--text-black-900);
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 10px;
+    background: var(--bg-black-90);
+}
+.messages .search.approve{
+  margin: 20px 0;
+}
