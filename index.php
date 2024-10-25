@@ -128,7 +128,7 @@
               Vision
              </h2>
              <p>
-              To see Ethiopia entrench the capacities which enable rapid learning, adaptation and utilization of effective foreign technologies by the year 2022/23.
+              To see Ethiopia entrench the capacities which enable rapid learning, adaptation and utilization of effective foreign technologies by the year 2023/24.
               It has a mission of coordinating, encouraging and supporting science and technology activities that realize the country's social and economic developments
              </p>
              <div class="buttons glow">
