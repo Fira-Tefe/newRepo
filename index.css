@@ -393,6 +393,28 @@ section{
   font-weight: 600;
   background: var(--bg-black-0);
 }
+.send-message .container .tab-contents .uploaded .contactUs{
+  border: 1px solid red;
+  position: absolute;
+  margin: -50px 17%;
+  width: 140px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  right: 0;
+}
+.send-message .container .tab-contents .uploaded .contactUs a{
+  color: var(--text-black-900);
+  font-weight: 900;
+  font-size: 15px;
+}
+.send-message .container .tab-contents .uploaded .contactUs:hover,
+.send-message .container .tab-contents .uploaded .contactUs a:hover{
+  transform: scale(1.05);
+  color: var(--main-color2);
+}
 .send-message .container .tab-contents .uploaded .submitButton{
   display: flex;
   flex-direction: row;

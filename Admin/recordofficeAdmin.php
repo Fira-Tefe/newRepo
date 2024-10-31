@@ -661,6 +661,14 @@
                   <a href="#" id="">Sign up</a>
               </div>
 
+              <div class="savechanges stored">
+              <a href="#" id="toggleAcceptedButton">Contact Users</a>
+              </div>
+
+              <div class="contact_table" id="acceptedMessagesTable" style="display: none;">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur enim illum excepturi sunt in eaque possimus nulla cumque sint. Eius.</p>
+              </div>
+
         </section>
     <?php elseif ($user_role === 'minister_admin'): ?>
           <header class="headAdmin">

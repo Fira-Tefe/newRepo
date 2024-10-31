@@ -74,15 +74,15 @@
             <p>Feel Free To Contact Us</p>
         </div>
         <div class="form-box">
-          <form action="">
+          <form action="./contact.php" method="post">
              <div class="names">
                 <div class="fname">
-                   <label for="fname"><h3>First Name</h3></label><br>
+                   <label for="fname"><h3>Fullname or Name of Organization</h3></label><br>
                    <input type="text" id="fname" name="fname" required>
                 </div>
                 <div class="lname">
-                  <label for="lname"><h3>Last Name</h3></label><br>
-                   <input type="text" id="lname" name="lname" required>
+                  <label for="lname"><h3>Location</h3></label><br>
+                   <input type="text" id="location" name="location" required>
                 </div>
              </div>
              <div class="aditions">
@@ -97,7 +97,7 @@
              </div>
              <div class="text-area">
                <label for="text"><h3>What Do You Have In Mind</h3></label><br>
-               <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+               <textarea name="description" id="textarea" cols="30" rows="10"></textarea>
              </div>
             <div class="btn">
                   <button type="reset">Reset</button>

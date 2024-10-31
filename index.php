@@ -195,6 +195,9 @@
                 <button type="submit" name="submit-btn">Submit</button>
               </div>
             </form>
+            <div class="contactUs">
+                 <a href="./contact.html">Contact Us</a>
+            </div>
           </div>
 
           </div>
