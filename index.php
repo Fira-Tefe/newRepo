@@ -184,7 +184,7 @@
                 <input type="email" id="emailAddress" name="emailAddress" placeholder="ex..me@gmail.com">
               </div>
               <div class="Unic">
-                <label for="uniquecode">Enter Unique Code:</label>
+                <label for="uniquecode">MinT Unique Code:</label>
                 <input type="password" id="uniquecode" name="uniquecode" placeholder="if you don't know, click on contact us button first">
               </div>
               <div class="mobile">
