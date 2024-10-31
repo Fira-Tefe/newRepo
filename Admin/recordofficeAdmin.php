@@ -64,10 +64,8 @@
                           // Fetch the number of rows
                           $result = mysqli_query($conn, "SELECT COUNT(*) as count FROM tb_upload");
                           $rowCount = mysqli_fetch_assoc($result)['count'];
-
                           // Close the database connection
                           mysqli_close($conn);
-
                           // Output the row count
                           echo $rowCount;
                           ?></span></a>
@@ -320,6 +318,7 @@
                     <td><h3>Phone number</h3></td>
                     <td><h3>Restore</h3></td>
                     <td><h3>Decline</h3></td>
+                    <td><h3>Letter ID</h3></td>
                   </tr>
                   <?php
                   $i = 1;
@@ -347,6 +346,7 @@
                           <?php echo htmlspecialchars($row["Decline"], ENT_QUOTES, 'UTF-8'); ?>
                         </h4>
                       </td>
+                      <td><?php echo htmlspecialchars($row["id"], ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
                   <?php endforeach; ?>
                 </table>
@@ -549,6 +549,118 @@
 
             </table>
             </div>
+        </section>
+    <?php elseif ($user_role === 'system_admin'): ?>
+      <header class="headAdmin">
+            <div class="logo">
+              <img src="../logo/Ministry_of_Innovation_and_Technology_Ethiopia_removebg_preview.png" alt="">
+            </div>
+            <div class="box">
+              <a href="#profile"><h3 class="navlinks activenav" onclick="convertsection('profile')"><i class='bx bx-home-alt-2'></i>Profile</h3></a>
+              <a href="#setting"><h3 class="navlinks" onclick="convertsection('setting')"><i class='bx bx-cog'></i>Manage All</h3></a>
+              <a href="../index.php"><h3><i class='bx bx-log-out'></i>Logout</h3></a>
+            </div>
+          </header>
+
+      <section class="sections setting " id="setting">
+                <div class="savechanges stored">
+                  <a href="#" id="toggleButton">All Lists</a>
+                </div>
+                <div class="tableBox" id="declinedMessagesTable" style="display: none;">
+                <div class="cssadmin">
+                <div class="search">
+                  <form action="">
+                    <input type="text"
+                          placeholder="Search by Position">
+                  </form>
+                </div>
+                <div class="manageTable">
+                  <table class="admintableBox managelists">
+                      <tr>
+                        <td class="head"><h3>#</h3></td>
+                        <td class="head"><h3>Full Name</h3></td>
+                        <td class="head"><h3>Username</h3></td>
+                        <td class="head"><h3>Password</h3></td>
+                        <td class="head"><h3>Position</h3></td>
+                        <td class="head"><h3>Delete</h3></td>
+                      </tr>
+                      <?php
+                        include '../connection.php';
+                        $i = 1;
+                        $selectRows = mysqli_query($conn, "SELECT * FROM admintable WHERE 1");
+                        if(mysqli_num_rows($selectRows) > 0) :
+                      ?>
+                     <?php while ($row = mysqli_fetch_assoc($selectRows)) : ?>
+                        <tr class="lists">
+                          <td class="nlists"><?php echo $i++; ?></td>
+                          <td><?php echo htmlspecialchars($row["fullname"], ENT_QUOTES, 'UTF-8'); ?></td>
+                          <td><?php echo htmlspecialchars($row["username"], ENT_QUOTES, 'UTF-8'); ?></td>
+                          <td><?php echo htmlspecialchars($row["password"], ENT_QUOTES, 'UTF-8'); ?></td>
+                          <td><?php echo htmlspecialchars($row["position"], ENT_QUOTES, 'UTF-8'); ?></td>
+                          <td></td>
+                        </tr>
+                        <?php endwhile; ?>
+                          <?php else : ?>
+                            <tr>
+                              <td colspan="3">No admins found.</td>
+                            </tr>
+                      <?php endif; ?>
+
+                      <?php
+                        include '../connection.php';
+                        $selectRows = mysqli_query($conn, "SELECT * FROM computeradmintable WHERE 1");
+                        if(mysqli_num_rows($selectRows) > 0) :
+                      ?>
+                     <?php while ($row = mysqli_fetch_assoc($selectRows)) : ?>
+                        <tr class="lists">
+                          <td class="nlists"><?php echo $i++; ?></td>
+                          <td><?php echo htmlspecialchars($row["fullname"], ENT_QUOTES, 'UTF-8'); ?></td>
+                          <td><?php echo htmlspecialchars($row["username"], ENT_QUOTES, 'UTF-8'); ?></td>
+                          <td><?php echo htmlspecialchars($row["password"], ENT_QUOTES, 'UTF-8'); ?></td>
+                          <td><?php echo htmlspecialchars($row["position"], ENT_QUOTES, 'UTF-8'); ?></td>
+                          <td></td>
+                        </tr>
+                        <?php endwhile; ?>
+                          <?php else : ?>
+                            <tr>
+                              <td colspan="3">No admins found.</td>
+                            </tr>
+                      <?php endif; ?>
+
+
+                      <?php
+                        include '../connection.php';
+                        $selectRows = mysqli_query($conn, "SELECT * FROM itadmintable WHERE 1");
+                        if(mysqli_num_rows($selectRows) > 0) :
+                      ?>
+                     <?php while ($row = mysqli_fetch_assoc($selectRows)) : ?>
+                        <tr class="lists">
+                          <td class="nlists"><?php echo $i++; ?></td>
+                          <td><?php echo htmlspecialchars($row["fullname"], ENT_QUOTES, 'UTF-8'); ?></td>
+                          <td><?php echo htmlspecialchars($row["username"], ENT_QUOTES, 'UTF-8'); ?></td>
+                          <td><?php echo htmlspecialchars($row["password"], ENT_QUOTES, 'UTF-8'); ?></td>
+                          <td><?php echo htmlspecialchars($row["position"], ENT_QUOTES, 'UTF-8'); ?></td>
+                          <td></td>
+                        </tr>
+                        <?php endwhile; ?>
+                          <?php else : ?>
+                            <tr>
+                              <td colspan="3">No admins found.</td>
+                            </tr>
+                      <?php endif; ?>
+                    </table>
+                  </div>
+                 </div>
+             </div>
+
+             <div class="savechanges stored">
+                  <a href="#" id="">Edit Lists</a>
+              </div>
+
+              <div class="savechanges stored">
+                  <a href="#" id="">Sign up</a>
+              </div>
+
         </section>
     <?php elseif ($user_role === 'minister_admin'): ?>
           <header class="headAdmin">

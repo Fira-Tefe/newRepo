@@ -54,23 +54,34 @@ if (isset($_POST['id']) && isset($_POST['restore'])) {
                 );
 
                 if ($insertStmt->execute()) {
-                    // Delete the record from itstorerecords after successful insertion
-                    $deleteStmt = $conn->prepare("DELETE FROM itstorerecords WHERE id = ?");
-                    $deleteStmt->bind_param("i", $idrestore);
+                    $selectQueryRecordOffice = "SELECT * FROM rejectedmessages WHERE id = '$idrestore'";
+                    $selectResultRO = $conn->query($selectQueryRecordOffice);
+                      
+                    if ($selectResultRO && $selectResultRO->num_rows > 0) {
+                        while ($row = $selectResultRO->fetch_assoc()) {
+                            $deleteStmtRO = $conn->prepare("DELETE FROM rejectedmessages WHERE id = '$idrestore'");
+                            if ($deleteStmtRO->execute()) {
+                               // Delete the record from itstorerecords after successful insertion
+                                $deleteStmt = $conn->prepare("DELETE FROM itstorerecords WHERE id = ?");
+                                $deleteStmt->bind_param("i", $idrestore);
 
-                    if ($deleteStmt->execute()) {
-                        echo "<script>
-                            alert('Record transferred and deleted successfully!');
-                            window.location.href = './recordOfficeAdmin.php';
-                        </script>";
-                        exit;
-                    } else {
-                        echo "<script>
-                            alert('Failed to delete the record from itstorerecords.');
-                            window.location.href = './recordOfficeAdmin.php';
-                        </script>";
-                        exit;
+                                if ($deleteStmt->execute()) {
+                                    echo "<script>
+                                        alert('Record transferred and deleted successfully!');
+                                        window.location.href = './recordOfficeAdmin.php';
+                                    </script>";
+                                    exit;
+                                } else {
+                                    echo "<script>
+                                        alert('Failed to delete the record from itstorerecords.');
+                                        window.location.href = './recordOfficeAdmin.php';
+                                    </script>";
+                                    exit;
+                                }
+                            }
+                        }
                     }
+                    
                 } else {
                     echo "<script>alert('Insertion failed: " . $insertStmt->error . "');</script>";
                 }

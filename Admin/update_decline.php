@@ -29,6 +29,7 @@ if (isset($_POST['id']) && isset($_POST['Decline'])) {
                 $namerestore = $row['name'];
                 $imagerestore = $row['image'];
                 $Declinerestore = 'OFF';
+                $DeclinerestoreIT = 'ON';
                 $departmentrestore = $row['Departments'];
                 $restore = 'OFF';
                 $emailB = $row['email'];
@@ -51,30 +52,46 @@ if (isset($_POST['id']) && isset($_POST['Decline'])) {
                 );
 
                 if ($insertStmt->execute()) {
-                    // Delete the record from itdepartmenttable after successful insertion
-                    $deleteStmt = $conn->prepare("DELETE FROM itdepartmenttable WHERE id = ?");
-                    if (!$deleteStmt) {
-                        die("Delete preparation failed: " . $conn->error);
-                    }
+                            $ITinsertStmt = $conn->prepare(
+                                "INSERT INTO itstorerecords (id, name, image, Decline, Departments, Restore, email, phonenumber) 
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+                            );
+                            if (!$ITinsertStmt) {
+                                die("Insert preparation failed: " . $conn->error);
+                            }
+            
+                            $ITinsertStmt->bind_param(
+                                "isssssss",
+                                $idrestore, $namerestore, $imagerestore, $DeclinerestoreIT, 
+                                $departmentrestore, $restore, $emailB, $phoneB
+                            );
+                               if($ITinsertStmt->execute()){
+                                        // success
+                                        // Delete the record from itdepartmenttable after successful insertion
+                                        $deleteStmt = $conn->prepare("DELETE FROM itdepartmenttable WHERE id = ?");
+                                        if (!$deleteStmt) {
+                                            die("Delete preparation failed: " . $conn->error);
+                                        }
 
-                    $deleteStmt->bind_param("i", $idrestore);
+                                        $deleteStmt->bind_param("i", $idrestore);
 
-                    if ($deleteStmt->execute()) {
-                        echo "<script>
-                            alert('Record transferred and deleted successfully!');
-                            window.location.href = './recordOfficeAdmin.php';
-                        </script>";
-                        exit;
+                                        if ($deleteStmt->execute()) {
+                                            echo "<script>
+                                                alert('Record transferred and deleted successfully!');
+                                                window.location.href = './recordOfficeAdmin.php';
+                                            </script>";
+                                            exit;
+                                        } else {
+                                            echo "<script>
+                                                alert('Failed to delete the record.');
+                                                window.location.href = './recordOfficeAdmin.php';
+                                            </script>";
+                                            exit;
+                                        }
+                            }
                     } else {
-                        echo "<script>
-                            alert('Failed to delete the record.');
-                            window.location.href = './recordOfficeAdmin.php';
-                        </script>";
-                        exit;
+                        echo "<script>alert('Insertion failed: " . $insertStmt->error . "');</script>";
                     }
-                } else {
-                    echo "<script>alert('Insertion failed: " . $insertStmt->error . "');</script>";
-                }
 
                 // Close insert statement
                 $insertStmt->close();

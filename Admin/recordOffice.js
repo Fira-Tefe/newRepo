@@ -156,7 +156,7 @@
     xhr.send(`id=${rowId}&restore=${newStatus}`);
   };
 
-  // IT toggle Departments Approved 
+  // IT toggle Departments Approved
   window.ITtoggleApproveStatus = function(rowId) {
     const approveElement = document.querySelector(`[data-Approve-id="${rowId}"]`);
     const currentStatus = approveElement.textContent.trim();
@@ -262,7 +262,7 @@ const toggleNewITButton = document.getElementById('itNewMessages');
       event.preventDefault();
       const ITTable = document.getElementById('DoneMessagesTable');
       ITTable.style.display = (ITTable.style.display === 'none' || ITTable.style.display === '') 
-        ? 'block' 
+        ? 'block'
         : 'none';
     });
   }

@@ -32,6 +32,15 @@
             }
         }
 
+                if(($uname === "admin") && ($pword === "123")) {
+                    // Set session variables for record office admin
+                    $_SESSION['user_role'] = 'system_admin';
+                    $_SESSION['username'] = "admin";
+                    header("Location: ./Admin/recordofficeAdmin.php");
+                    $validUser = false;
+                    exit();
+                }
+
         if($ministerResult->num_rows > 0) {
             while($row = $ministerResult->fetch_assoc()) {
                 if(($uname === $row["username"]) && ($pword === $row["password"])) {

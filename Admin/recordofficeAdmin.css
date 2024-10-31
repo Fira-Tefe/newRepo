@@ -601,7 +601,6 @@ table,th, td,tr{
     padding: 5px; 
     border-radius: 4px;
 }
-
 .messages .tableBox td h4.off-status {
     color: var(--text-black-900);
     background-color: red; 
@@ -624,4 +623,90 @@ table,th, td,tr{
 }
 .messages .search.approve{
   margin: 20px 0;
+}
+.setting .savechanges{
+    display: flex;
+    justify-content: start;
+    margin: 50px 70px;
+    margin-bottom: 25px;
+}
+.setting .savechanges a{
+    border: 1px solid var(--skin-color);
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 10px;
+    color: var(--text-black-900);
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.setting .savechanges a:hover{
+    transform: scale(1.05);
+    color: var(--main-color2);
+    background: var(--bg-black-0);
+}
+.setting .tableBox .cssadmin{
+    border: 1px solid var(--skin-color);
+    margin: 20px 50px;
+    position: relative;
+    margin-bottom: 50px;
+}
+.setting .tableBox .cssadmin::before{
+    content: '';
+    position: absolute;
+    background: var(--skin-color);
+    bottom: -15px;
+    left: 0;
+    width: 40%;
+    height: 4px;
+}
+.setting .tableBox .cssadmin::after{
+    content: '';
+    position: absolute;
+    background: var(--skin-color);
+    bottom: -25px;
+    left: 0;
+    width: 15%;
+    height: 4px;
+}
+.setting .tableBox .cssadmin .search{
+    margin: 20px 20px;
+}
+.setting .tableBox .cssadmin .search input{
+    border: 1px solid var(--skin-color);
+    height: 30px;
+    width: 200px;
+    color: var(--text-black-700);
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    background: var(--bg-black-900);
+}
+.setting .tableBox .manageTable{
+    border: 1px solid var(--skin-color);
+    margin: 0 50px;
+    margin-bottom: 30px;
+}
+.setting .tableBox .manageTable .managelists{
+    border-collapse: collapse;
+    width: 100%;
+} 
+.setting .tableBox .manageTable .managelists tr td.head{
+    color: var(--text-black-900);
+    font-weight: 800;
+    font-size: 15px;
+    padding-left: 15px;
+    height: 40px;
+    background: var(--bg-black-900);
+}
+.setting .tableBox .manageTable .managelists tr td{
+    color: var(--text-black-700);
+    font-weight: 600;
+    font-size: 15px;
+    height: 30px;
+    padding-left: 10px;
 }
