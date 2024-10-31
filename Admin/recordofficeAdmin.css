@@ -695,6 +695,26 @@ table,th, td,tr{
     border-collapse: collapse;
     width: 100%;
 } 
+.setting .tableBox .manageTable .managelists h4.on-status{
+    background-color: green; /* Green background for ON */
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    width: 50%;
+    height: 20px;
+    cursor: pointer;
+    margin: auto;
+}
+.setting .tableBox .manageTable .managelists h4.off-status{
+    background-color: red; /* Red background for OFF */
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    width: 50%;
+    height: 20px;
+    cursor: pointer;
+    margin: auto;
+}
 .setting .tableBox .manageTable .managelists tr td.head{
     color: var(--text-black-900);
     font-weight: 800;

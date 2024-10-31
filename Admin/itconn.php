@@ -55,7 +55,7 @@
   }
   
   if($validUser === true){
-      $InsertSql = "Insert into itadmintable(username,password,fullname) values('$Uname','$Pword','$Fname'); ";
+      $InsertSql = "Insert into itadmintable(username,password,fullname,position,deleted) values('$Uname','$Pword','$Fname','IT Admin','OFF'); ";
       if($CPword === $Pword){
         if($conn->query($InsertSql) === true){
           echo "<script>

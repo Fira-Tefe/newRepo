@@ -117,6 +117,20 @@
     };
     xhr.send();
   };
+ //Search by Possition
+ document.getElementById('searchPosition').addEventListener('input', function() {
+  const searchValue = this.value.toLowerCase().trim();
+  const tableRows = document.querySelectorAll('#declinedMessagesTable .lists');
+
+  tableRows.forEach(row => {
+    const position = row.cells[4].textContent.toLowerCase();
+    if (position.includes(searchValue)) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+});
 
   // Toggle Restore Status
   window.toggleRestoreStatus = function(rowId) {
@@ -167,6 +181,38 @@
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send(`id=${rowId}&restore=${newStatus}`);
   };
+
+  // delete status
+  window.toggleDeleteStatus = function(rowId, rowPassword) {
+    if (confirm('Are you sure you want to Delete this Admin?')) {
+    const deleteElement = document.querySelector(`[data-restore-id="${rowId}"]`);
+    if (!deleteElement) return;
+
+    const currentStatus = deleteElement.textContent.trim();
+    const newStatus = currentStatus === 'OFF' ? 'ON' : 'OFF';
+
+    deleteElement.textContent = newStatus;
+    deleteElement.classList.toggle('on-status', newStatus === 'ON');
+    deleteElement.classList.toggle('off-status', newStatus === 'OFF');
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "./deleteforSystemAdmin.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send(`username=${encodeURIComponent(rowId)}&password=${encodeURIComponent(rowPassword)}&deleted=${newStatus}`);
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          console.log("Server response:", xhr.responseText); 
+          alert(xhr.responseText); 
+        } else {
+          console.error("Failed to update delete status:", xhr.status, xhr.statusText);
+        }
+      }
+    };
+   }
+  };
+
 
   // IT toggle Departments Approved
   window.ITtoggleApproveStatus = function(rowId) {
@@ -278,3 +324,6 @@ const toggleNewITButton = document.getElementById('itNewMessages');
         : 'none';
     });
   }
+
+ 
+  
