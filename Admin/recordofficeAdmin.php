@@ -565,6 +565,22 @@
       <section class="sections setting " id="setting">
                 <div class="savechanges stored">
                   <a href="#" id="toggleButton">All Lists</a>
+                  <span>
+                    <?php
+                      require '../connection.php';
+                      $result = mysqli_query($conn, "SELECT COUNT(*) as count FROM admintable");
+                      $rowCount = mysqli_fetch_assoc($result)['count'];
+
+                      $result2 = mysqli_query($conn, "SELECT COUNT(*) as count FROM itadmintable");
+                      $rowCount2 = mysqli_fetch_assoc($result2)['count'];
+
+                      $result3 = mysqli_query($conn, "SELECT COUNT(*) as count FROM computeradmintable");
+                      $rowCount3 = mysqli_fetch_assoc($result3)['count'];
+                      mysqli_close($conn);
+
+                      echo $rowCount+$rowCount2+$rowCount3;
+                      ?>
+                    </span>
                 </div>
                 <div class="tableBox" id="declinedMessagesTable" style="display: none;">
                   <div class="cssadmin">
@@ -602,7 +618,7 @@
                             <td>
                               <h4
                                   class="<?php echo $row["deleted"] === 'ON' ? 'on-status' : 'off-status'; ?>" 
-                                  data-restore-id="<?php echo $row['username']; ?>"
+                                  data-delete-username="<?php echo $row['username']; ?>"
                                   onclick="toggleDeleteStatus('<?php echo htmlspecialchars($row['username'], ENT_QUOTES, 'UTF-8'); ?>', '<?php echo htmlspecialchars($row['password'], ENT_QUOTES, 'UTF-8'); ?>')">
                                   <?php echo htmlspecialchars($row["deleted"], ENT_QUOTES, 'UTF-8'); ?>
                               </h4>

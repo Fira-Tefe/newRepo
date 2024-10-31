@@ -117,20 +117,7 @@
     };
     xhr.send();
   };
- //Search by Possition
- document.getElementById('searchPosition').addEventListener('input', function() {
-  const searchValue = this.value.toLowerCase().trim();
-  const tableRows = document.querySelectorAll('#declinedMessagesTable .lists');
 
-  tableRows.forEach(row => {
-    const position = row.cells[4].textContent.toLowerCase();
-    if (position.includes(searchValue)) {
-      row.style.display = '';
-    } else {
-      row.style.display = 'none';
-    }
-  });
-});
 
   // Toggle Restore Status
   window.toggleRestoreStatus = function(rowId) {
@@ -185,7 +172,7 @@
   // delete status
   window.toggleDeleteStatus = function(rowId, rowPassword) {
     if (confirm('Are you sure you want to Delete this Admin?')) {
-    const deleteElement = document.querySelector(`[data-restore-id="${rowId}"]`);
+    const deleteElement = document.querySelector(`[data-delete-username="${rowId}"]`);
     if (!deleteElement) return;
 
     const currentStatus = deleteElement.textContent.trim();
@@ -325,5 +312,17 @@ const toggleNewITButton = document.getElementById('itNewMessages');
     });
   }
 
- 
-  
+//Search by Possition
+document.getElementById('searchPosition').addEventListener('input', function() {
+  const searchValue = this.value.toLowerCase().trim();
+  const tableRows = document.querySelectorAll('#declinedMessagesTable .lists');
+
+  tableRows.forEach(row => {
+    const position = row.cells[4].textContent.toLowerCase();
+    if (position.includes(searchValue)) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+});

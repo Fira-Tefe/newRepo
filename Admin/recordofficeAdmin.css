@@ -705,6 +705,21 @@ table,th, td,tr{
     cursor: pointer;
     margin: auto;
 }
+.setting .savechanges span{
+    border: 1px solid var(--skin-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    width: 25px;
+    height: 25px;
+    color: white;
+    background: red;
+    border-radius: 50%;
+    position: relative;
+    right: 10px;
+    top: -5px;
+}
 .setting .tableBox .manageTable .managelists h4.off-status{
     background-color: red; /* Red background for OFF */
     color: white;
