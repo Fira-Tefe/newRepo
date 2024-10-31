@@ -94,6 +94,18 @@
     });
   }
 
+  // system admin unique code edit
+  const toggleEdit = document.getElementById('toggle-edit');
+  if (toggleEdit) {
+    toggleEdit.addEventListener('click', function (event) {
+      event.preventDefault();
+      const approvedTable = document.getElementById('toggle-edit-div');
+      approvedTable.style.display = (approvedTable.style.display === 'none' || approvedTable.style.display === '') 
+        ? 'block' 
+        : 'none';
+    });
+  }
+
   // Search by Letter ID
   window.searchByLetterID = function(searchValue) {
     const xhr = new XMLHttpRequest();

@@ -669,6 +669,22 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur enim illum excepturi sunt in eaque possimus nulla cumque sint. Eius.</p>
               </div>
 
+              <div class="savechanges stored">
+              <a href="#" id="toggle-edit">Change UniqueCode</a>
+              </div>
+
+              <div class="contact_table" id="toggle-edit-div" style="display: none;">
+                 <div class="boxEditting">
+                    <form action="./edittingUC.php" method="post">
+                      <label for="">Enter the previous Unique Code</label>
+                      <input type="text" name="uniqueCode" id="uniqueCode">
+                      <label for="">Enter new Unique Code</label>
+                      <input type="text" name="newuniqueCode" id="newuniqueCode">
+                      <button type="submit">Submit</button>
+                    </form>
+                 </div>
+              </div>
+
         </section>
     <?php elseif ($user_role === 'minister_admin'): ?>
           <header class="headAdmin">

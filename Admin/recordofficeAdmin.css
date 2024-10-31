@@ -710,3 +710,65 @@ table,th, td,tr{
     height: 30px;
     padding-left: 10px;
 }
+.setting .contact_table{
+    border: 1px solid var(--skin-color);
+    margin: 30px 70px;
+    position: relative;
+}
+.setting .contact_table::after{
+   content: '';
+   position: absolute;
+   width: 40%;
+   height: 4px;
+   bottom: -15px;
+   left: 0;
+   background: var(--skin-color);
+}
+.setting .contact_table::before{
+    content: '';
+    position: absolute;
+    width: 15%;
+    height: 4px;
+    bottom: -30px;
+    left: 0;
+    background: var(--skin-color);
+ }
+ .setting .contact_table .boxEditting{
+    margin: 30px 25px;
+ }
+ .setting .contact_table .boxEditting form{
+    display: flex;
+    flex-direction: column;
+ }
+ .setting .contact_table .boxEditting form label{
+    color: var(--text-black-900);
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+ }
+ .setting .contact_table .boxEditting form input{
+    border: 1px solid var(--skin-color);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px;
+    color: var(--text-black-700);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: var(--bg-black-900);
+    width: 40%;
+ }
+ .setting .contact_table .boxEditting form button{
+    border: 1px solid var(--skin-color);
+    width: 150px;
+    height: 35px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: var(--bg-black-900);
+    color: var(--text-black-900);
+    font-size: 15px;
+    font-weight: 800;
+ }
+ .setting .contact_table .boxEditting form button:hover{
+    transform: scale(1.05);
+    color: var(--main-color2);
+ }

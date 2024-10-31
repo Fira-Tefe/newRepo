@@ -10,6 +10,9 @@
         $select = "SELECT * FROM `admintable` WHERE 1";
         $result1 = $conn->query($select);
 
+        $selecta = "SELECT * FROM `systemadmin` WHERE 1";
+        $resulta = $conn->query($selecta);
+
         $selectComputerAdmin = "SELECT * FROM `computeradmintable` WHERE 1";
         $computerresult1 = $conn->query($selectComputerAdmin);
 
@@ -31,15 +34,18 @@
                 }
             }
         }
-
-                if(($uname === "admin") && ($pword === "123")) {
+        if($resulta->num_rows > 0) {
+            while($row = $resulta->fetch_assoc()) {
+                if(($uname === $row["username"]) && ($pword === $row["password"])) {
                     // Set session variables for record office admin
                     $_SESSION['user_role'] = 'system_admin';
-                    $_SESSION['username'] = "admin";
+                    $_SESSION['username'] = $uname;
                     header("Location: ./Admin/recordofficeAdmin.php");
                     $validUser = false;
                     exit();
                 }
+            }
+        }
 
         if($ministerResult->num_rows > 0) {
             while($row = $ministerResult->fetch_assoc()) {

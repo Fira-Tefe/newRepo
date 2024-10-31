@@ -183,6 +183,10 @@
                 <label for="emailAddress">Email Address:</label>
                 <input type="email" id="emailAddress" name="emailAddress" placeholder="ex..me@gmail.com">
               </div>
+              <div class="Unic">
+                <label for="uniquecode">Enter Unique Code:</label>
+                <input type="password" id="uniquecode" name="uniquecode" placeholder="if you don't know, click on contact us button first">
+              </div>
               <div class="mobile">
                 <label for="mobileNum">Phone Number:</label>
                 <input type="number" id="mobileNum" name="mobileNum" placeholder="ex..0912456545">
