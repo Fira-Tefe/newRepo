@@ -44,7 +44,7 @@
                     $body = "This is Authentication message from Ministry of Innovation and Technology of Ethiopia,Use MinT unique code = '$uniquecode' ,Thank You for Contact Us!";
                             if(mail($recipient_email,$subject,$body,"From: $sender_name<$sender_email>")){
                                 echo "<script>
-                                alert('Successed, Check your email, we will sent the Unique Code!!!');
+                                alert('Successed, Check your email, we will sent MinT Unique Code!!!');
                                 window.location.href = 'index.php';
                                 </script>";
                             exit(0);
