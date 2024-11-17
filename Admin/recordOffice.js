@@ -82,6 +82,18 @@
     });
   }
 
+ // system admin sign up
+ const systemadminsignup = document.getElementById('systemadminsignup');
+ if (systemadminsignup) {
+  systemadminsignup.addEventListener('click', function (event) {
+     event.preventDefault();
+     const systemadminsignupcontent = document.getElementById('systemadminsignupcontent');
+     systemadminsignupcontent.style.display = (systemadminsignupcontent.style.display === 'none' || systemadminsignupcontent.style.display === '') 
+       ? 'block' 
+       : 'none';
+   });
+ }
+
   // Toggle Approved Messages Table
   const toggleApproveButton = document.getElementById('toggleApproveButton');
   if (toggleApproveButton) {

@@ -34,3 +34,16 @@ window.addEventListener("load", () => {
     dayNight.querySelector("i").classList.add("bx-moon");
   }
 });
+
+//
+/* toggle language swithcer */
+const styleLangugeToggler = document.querySelector(".style-language");
+styleLangugeToggler.addEventListener("click", () => {
+  document.querySelector(".language").classList.toggle("open");
+});
+/* hide style language on scoll */
+window.addEventListener("scroll", () => {
+  if (document.querySelector(".language").classList.contains("open")) {
+    document.querySelector(".language").classList.remove("open");
+  }
+});

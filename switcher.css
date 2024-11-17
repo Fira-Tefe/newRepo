@@ -73,3 +73,62 @@
 .style-switch .color-5 {
   background: #f021b2;
 }
+
+/* language switch */
+.language {
+  position: fixed;
+  right: 0;
+  top: 180px;
+  padding: 15px;
+  width: 200px;
+  background: var(--bg-black-100);
+  border: 1px solid var(--bg-black-50);
+  z-index: 101;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  transform: translateX(100%);
+}
+.language.open {
+  transform: translateX(-25px);
+}
+.language .l-icon {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--bg-black-100);
+  color: var(--text-black-900);
+  right: 100%;
+  border: 1px solid var(--skin-color);
+  margin-right: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  top: 10px;
+}
+.language .l-icon h2{
+   color: var(--text-black-900);
+   font-weight: 800;
+   font-size: 12px;
+}
+.language .lang-lists{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.language .lang-lists span{
+  border: 1px solid var(--skin-color);
+  width: 35px;
+  height: 35px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-black-900);
+  font-weight: 700;
+}

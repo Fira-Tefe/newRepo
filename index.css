@@ -994,6 +994,9 @@ ul{
   .header{
     height: 50px;
   }
+  section.send-message{
+    height: 150hv;
+  }
   .title h2{
     margin-top: 25px;
     padding-top: 0;
@@ -1175,16 +1178,21 @@ ul{
   .login .block .btn button h3{
     font-size: 15px;
   }
+  .send-message .container{
+    margin-bottom: 50px;
+  }
   .send-message .container .tab-contents .uploaded .image,
   .send-message .container .tab-contents .uploaded .divname,
   .send-message .container .tab-contents .uploaded .email,
-  .send-message .container .tab-contents .uploaded .mobile{
+  .send-message .container .tab-contents .uploaded .mobile,
+  .send-message  .container .tab-contents .uploaded .Unic{
     flex-direction: column;
   }
   .send-message .container .tab-contents .uploaded .image label,
   .send-message .container .tab-contents .uploaded .divname label,
   .send-message .container .tab-contents .uploaded .email label,
-  .send-message .container .tab-contents .uploaded .mobile label{
+  .send-message .container .tab-contents .uploaded .mobile label,
+  .send-message .container .tab-contents .uploaded .Unic label{
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 10px;
@@ -1193,7 +1201,8 @@ ul{
   .send-message .container .tab-contents .uploaded .image input,
   .send-message .container .tab-contents .uploaded .divname textarea,
   .send-message .container .tab-contents .uploaded .email input,
-  .send-message .container .tab-contents .uploaded .mobile input{
+  .send-message .container .tab-contents .uploaded .mobile input,
+  .send-message .container .tab-contents .uploaded .Unic input{
     flex: 0 0 100%;
     max-width: 100%;
   }
@@ -1201,9 +1210,13 @@ ul{
     justify-content: center;
     padding: 0;
   }
+  .send-message .container .tab-contents .uploaded .contactUs{
+    margin: 0 32.5%;
+  }
   .send-message .container .tab-contents .uploaded .submitButton button{
     width: 35%;
   }
+
   /* mobile view for type letter send message */
   .send-message .container .tab-titles{
     margin-left: 2%;

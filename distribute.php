@@ -24,7 +24,9 @@
 
         if($result1->num_rows > 0) {
             while($row = $result1->fetch_assoc()) {
-                if(($uname === $row["username"]) && ($pword === $row["password"])) {
+                if($uname === $row["username"]) {
+                    $hashedPassword = $row['password'];
+                    if (password_verify($pword, $hashedPassword)) {
                     // Set session variables for record office admin
                     $_SESSION['user_role'] = 'record_office_admin';
                     $_SESSION['username'] = $uname;
@@ -33,10 +35,11 @@
                     exit();
                 }
             }
+            }
         }
         if($resulta->num_rows > 0) {
             while($row = $resulta->fetch_assoc()) {
-                if(($uname === $row["username"]) && ($pword === $row["password"])) {
+                if(($uname === $row["username"]) && ($pword === $row['password'])) {
                     // Set session variables for record office admin
                     $_SESSION['user_role'] = 'system_admin';
                     $_SESSION['username'] = $uname;
@@ -49,7 +52,9 @@
 
         if($ministerResult->num_rows > 0) {
             while($row = $ministerResult->fetch_assoc()) {
-                if(($uname === $row["username"]) && ($pword === $row["password"])) {
+                if($uname === $row["username"]) {
+                    $hashedPassword = $row['password'];
+                    if (password_verify($pword, $hashedPassword)) {
                     // Set session variables for record office admin
                     $_SESSION['user_role'] = 'minister_admin';
                     $_SESSION['username'] = $uname;
@@ -58,11 +63,14 @@
                     exit();
                 }
             }
+            }
         }
 
         if($computerresult1->num_rows > 0) {
             while($row = $computerresult1->fetch_assoc()) {
-                if(($uname === $row["username"]) && ($pword === $row["password"])) {
+                if($uname === $row["username"]) {
+                    $hashedPassword = $row['password'];
+                    if (password_verify($pword, $hashedPassword)) {
                     // Set session variables for computer admin
                     $_SESSION['user_role'] = 'computer_admin';
                     $_SESSION['username'] = $uname;
@@ -71,11 +79,14 @@
                     exit();
                 }
             }
+            }
         }
 
         if($itresult1->num_rows > 0) {
             while($row = $itresult1->fetch_assoc()) {
-                if(($uname === $row["username"]) && ($pword === $row["password"])) {
+                if($uname === $row["username"]) {
+                    $hashedPassword = $row['password'];
+                    if (password_verify($pword, $hashedPassword)) {
                     // Set session variables for IT admin
                     $_SESSION['user_role'] = 'it_admin';
                     $_SESSION['username'] = $uname;
@@ -83,6 +94,7 @@
                     $validUser = false;
                     exit();
                 }
+              }
             }
         }
     }

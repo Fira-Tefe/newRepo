@@ -52,7 +52,6 @@
                             else{
                                 echo "something went wrong, Related to email address";
                             }
-
                 }
             }
           }

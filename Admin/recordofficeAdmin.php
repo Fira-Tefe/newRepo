@@ -583,6 +583,9 @@
                     </span>
                 </div>
                 <div class="tableBox" id="declinedMessagesTable" style="display: none;">
+                <div class="savechanges">
+                  <a href="./recordofficeAdmin.php" >save</a>
+                </div>
                   <div class="cssadmin">
                     <div class="search">
                       <input type="text" id="searchPosition" placeholder="Search by Position">
@@ -637,16 +640,48 @@
                   </div>
                 </div>
 
-             <div class="savechanges stored">
-                  <a href="#" id="">Edit Lists</a>
+              <div class="savechanges stored">
+                  <a href="#" id="systemadminsignup">Add Users</a>
+              </div>
+              
+              <div class="signup-op" id="systemadminsignupcontent" style="display: none;">
+                  <form action="./adminsignup.php" name="systemsignForm" method="POST" onsubmit="return systemvalidateForms(event)">
+                      <div class="Fullname">
+                        <label for="newFullname">Enter Fullname : </label>
+                        <input type="text" id="Fullname" name="Fullname">
+                      </div>
+                      <div class="setUser">
+                        <label for="setUsername">Enter Username : </label>
+                        <input type="text" id="setUsername" name="setUsername" required>
+                      </div>
+                      <div class="setPassword">
+                        <label for="setPassword">Enter Password : </label>
+                        <input type="password" id="setPassword" name="setPassword" required>
+                      </div>
+                      <div class="seCpassword">
+                        <label for="seCpassword">Confirm Password : </label>
+                        <input type="password" id="seCpassword" name="seCpassword" required>
+                      </div>
+                      <div class="position">
+                          <label for="position">Position :</label>
+                          <select id="position" name="position" required>
+                              <h4><option value="" disabled selected><h4>Select a Department</h4></option></h4>
+                              <option value="IT Department"><h4>IT Department</h4></option>
+                              <option value="Computer Department"><h4>Computer Department</h4></option>
+                              <option value="Record Officer"><h4>Record Officer</h4></option>
+                              <option value="Third Department"><h4>Third Department</h4></option>
+                              <option value="Fourth Department"><h4>Fourth Department</h4></option>
+                          </select>
+                      </div>
+                      <div class="setButton">
+                        <button type="submit">Add</button>
+                        <button type="reset">Reset</button>
+                      </div>
+                  </form>
               </div>
 
               <div class="savechanges stored">
-                  <a href="#" id="">Sign up</a>
-              </div>
-
-              <div class="savechanges stored">
-              <a href="#" id="toggleAcceptedButton">Contact Users</a>
+              <a href="#" id="toggleAcceptedButton">Contacted Users</a>
               </div>
 
               <div class="contact_table" id="acceptedMessagesTable" style="display: none;">
@@ -1338,10 +1373,7 @@
             </div>
         </section>
     <?php else: ?>
-        <section>
-            <h1>Unauthorized</h1>
-            <p>You do not have permission to access this page.</p>
-        </section>
+            <script>alert('Unauthorized access, Access denied!!!');</script>
     <?php endif; ?>
     <footer class="footer">
     <div class="last-footer">

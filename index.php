@@ -185,7 +185,7 @@
               </div>
               <div class="Unic">
                 <label for="uniquecode">MinT Unique Code:</label>
-                <input type="password" id="uniquecode" name="uniquecode" placeholder="if you don't know, click on contact us button first">
+                <input type="password" id="uniquecode" name="uniquecode" placeholder="if you don't have one, click on contact us button">
               </div>
               <div class="mobile">
                 <label for="mobileNum">Phone Number:</label>
@@ -193,7 +193,7 @@
               </div>
               <div class="divname">
                 <label>Description:</label>
-                <textarea name="nameLabel" id="nameLabel" required cols="30" rows="10" placeholder="Write your email address or phone number"></textarea>
+                <textarea name="nameLabel" id="nameLabel" required cols="30" rows="10" placeholder="Put your description here"></textarea>
               </div>
               <div class="submitButton">
                 <button type="submit" name="submit-btn">Submit</button>
@@ -270,6 +270,17 @@
         <span class="color-3" onclick="setActiveStyle('color-3')"></span>
         <span class="color-4" onclick="setActiveStyle('color-4')"></span>
         <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+      </div>
+    </div>
+    <div class="language">
+      <div class="style-language l-icon">
+        <h2>Lng</h2>
+      </div>
+      <div class="lang-lists">
+        <span>Eng</span>
+        <span>አም</span>
+        <span>A/O</span>
+        <span>ትግ</span>
       </div>
     </div>
     <!-- footer start -->

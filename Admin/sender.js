@@ -125,7 +125,27 @@ function validateForms(event) {
 
     return true;
 }
+// validation for system admin
 
+function systemvalidateForms(event) {
+    let fullname = document.forms['systemsignForm']['Fullname'].value.trim();
+    let username = document.forms['systemsignForm']['setUsername'].value.trim();
+    let password = document.forms['systemsignForm']['setPassword'].value;
+    let cpassword = document.forms['systemsignForm']['seCpassword'].value;
+    let namePattern = /^[A-Za-z ]+$/;
+
+    if (!namePattern.test(fullname)) {
+        alert("Full name must contain only letters. Please try again!!!");
+        return false;
+    }
+
+    if (password !== cpassword) {
+        alert("Password mismatch, Please try again!!!");
+        return false;
+    }
+
+    return true;
+}
 // Profile image upload preview
 function handleProfileUpload(inputElement, imgElementId) {
     let profilepic = document.getElementById(imgElementId);
